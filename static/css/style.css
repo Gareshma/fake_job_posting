@@ -1,0 +1,250 @@
+/* Custom styles for Job Posting Classifier */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.navbar-brand i {
+    color: #ffc107;
+}
+
+main {
+    min-height: calc(100vh - 200px);
+    padding-bottom: 2rem;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    font-weight: 600;
+}
+
+.form-select-lg {
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 2px solid #dee2e6;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-select-lg:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.btn {
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-lg {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:disabled {
+    transform: none;
+    box-shadow: none;
+}
+
+#resultsSection .card {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.prediction-result {
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.prediction-real {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    border: 2px solid #28a745;
+    color: #155724;
+}
+
+.prediction-fake {
+    background: linear-gradient(135deg, #f8d7da, #f1b0b7);
+    border: 2px solid #dc3545;
+    color: #721c24;
+}
+
+.prediction-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.confidence-bar {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+    margin: 0.5rem 0;
+}
+
+.confidence-fill {
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+.confidence-high {
+    background: linear-gradient(90deg, #28a745, #20c997);
+}
+
+.confidence-medium {
+    background: linear-gradient(90deg, #ffc107, #fd7e14);
+}
+
+.confidence-low {
+    background: linear-gradient(90deg, #dc3545, #e83e8c);
+}
+
+.metric-item {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0d6efd;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.job-detail-item {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #0d6efd;
+}
+
+.job-detail-label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.25rem;
+}
+
+.job-detail-content {
+    color: #6c757d;
+    line-height: 1.5;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .btn-lg {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+.alert {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #f8d7da, #f1b0b7);
+    color: #721c24;
+}
+
+footer {
+    border-top: 1px solid #dee2e6;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;
+}
+
+.probability-container {
+    margin: 0.5rem 0;
+}
+
+.probability-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.probability-bar {
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.probability-fill-real {
+    background: linear-gradient(90deg, #28a745, #20c997);
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+}
+
+.probability-fill-fake {
+    background: linear-gradient(90deg, #dc3545, #e83e8c);
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+}
+
+.bg-light {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;
+}

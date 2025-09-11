@@ -1,0 +1,116 @@
+FAKE JOB POSTING DETECTION - MODEL EVALUATION RESULTS
+============================================================
+Timestamp: 2025-07-16 16:16:22
+Dataset shape: Train (14304, 123), Test (3576, 123)
+============================================================
+
+MODEL PERFORMANCE SUMMARY
+------------------------------------------------------------
+Model                Test Accuracy   Test F1-Score  
+------------------------------------------------------------
+logistic_regression  0.8364          0.3253         
+naive_bayes          0.8059          0.2407         
+random_forest        0.9701          0.5523         
+xgboost              0.9841          0.8167         
+one_class_svm        0.8750          0.1354         
+
+============================================================
+Best Accuracy: xgboost (0.9841)
+Best F1-Score: xgboost (0.8167)
+============================================================
+
+
+DETAILED RESULTS - LOGISTIC_REGRESSION
+--------------------------------------------------
+Train Accuracy: 0.8311
+Test Accuracy:  0.8364
+Train F1-Score: 0.3289
+Test F1-Score:  0.3253
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      0.84      0.91      3403
+           1       0.20      0.82      0.33       173
+
+    accuracy                           0.84      3576
+   macro avg       0.60      0.83      0.62      3576
+weighted avg       0.95      0.84      0.88      3576
+
+--------------------------------------------------
+
+DETAILED RESULTS - NAIVE_BAYES
+--------------------------------------------------
+Train Accuracy: 0.8048
+Test Accuracy:  0.8059
+Train F1-Score: 0.2458
+Test F1-Score:  0.2407
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.81      0.89      3403
+           1       0.15      0.64      0.24       173
+
+    accuracy                           0.81      3576
+   macro avg       0.56      0.73      0.56      3576
+weighted avg       0.94      0.81      0.86      3576
+
+--------------------------------------------------
+
+DETAILED RESULTS - RANDOM_FOREST
+--------------------------------------------------
+Train Accuracy: 1.0000
+Test Accuracy:  0.9701
+Train F1-Score: 1.0000
+Test F1-Score:  0.5523
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      1.00      0.98      3403
+           1       1.00      0.38      0.55       173
+
+    accuracy                           0.97      3576
+   macro avg       0.98      0.69      0.77      3576
+weighted avg       0.97      0.97      0.96      3576
+
+--------------------------------------------------
+
+DETAILED RESULTS - XGBOOST
+--------------------------------------------------
+Train Accuracy: 1.0000
+Test Accuracy:  0.9841
+Train F1-Score: 1.0000
+Test F1-Score:  0.8167
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99      3403
+           1       0.92      0.73      0.82       173
+
+    accuracy                           0.98      3576
+   macro avg       0.95      0.87      0.90      3576
+weighted avg       0.98      0.98      0.98      3576
+
+--------------------------------------------------
+
+DETAILED RESULTS - ONE_CLASS_SVM
+--------------------------------------------------
+Train Accuracy: 0.8702
+Test Accuracy:  0.8750
+Train F1-Score: 0.1677
+Test F1-Score:  0.1354
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.91      0.93      3403
+           1       0.10      0.20      0.14       173
+
+    accuracy                           0.88      3576
+   macro avg       0.53      0.56      0.53      3576
+weighted avg       0.92      0.88      0.89      3576
+
+--------------------------------------------------

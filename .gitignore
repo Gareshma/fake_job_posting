@@ -1,0 +1,52 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+
+# Virtual environment
+env/
+venv/
+.venv/
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Results and temporary files
+results/*.png
+results/*.jpg
+results/*.pdf
+results/*.csv
+
+# Trained models (keep only if needed, otherwise ignore)
+trained_models/
+*.h5
+*.joblib
+*.model
+*.sav
+
+# Embeddings (large pre-trained files like GloVe)
+embeddings/glove*.txt
+
+# Build / Distribution
+dist/
+build/
+*.egg-info/
+
+# Azure / Deployment
+*.zip
+*.tar.gz

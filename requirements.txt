@@ -1,0 +1,39 @@
+# Core dependencies
+numpy
+pandas
+scikit-learn
+gensim
+
+# Machine Learning
+xgboost
+
+# Text processing and NLP
+nltk
+
+# Data visualization
+matplotlib
+seaborn
+
+# Web framework
+Flask
+Flask-Cors
+
+# API documentation
+flasgger
+
+# Jupyter notebook
+jupyter
+ipykernel
+
+# File handling
+openpyxl
+
+# Additional utilities
+requests
+python-dotenv
+
+# For model persistence
+joblib
+
+# Optional: for better text preprocessing
+spacy

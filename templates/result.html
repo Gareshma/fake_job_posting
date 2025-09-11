@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h4 class="text-center mb-4">Evaluation Charts by Model</h4>
+
+    <!-- Compact Dropdown -->
+    <div class="d-flex justify-content-center mb-4">
+        <div class="text-center" style="max-width: 400px; width: 100%;">
+            <label for="modelSelect" class="form-label fw-semibold">Choose a Model:</label>
+            <select id="modelSelect" class="form-select">
+                <option value="xgboost">XGBoost</option>
+                <option value="logistic_regression">Logistic Regression</option>
+                <option value="naive_bayes">Naive Bayes</option>
+                <option value="random_forest">Random Forest</option>
+                <option value="one_class_svm">One-Class SVM</option>
+            </select>
+        </div>
+    </div>
+
+    
+
+    <!-- Dynamic Charts in Row -->
+    <div class="row g-4" id="chartsContainer">
+        <!-- Confusion Matrix -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-header bg-info text-white text-center">
+                    <h6 class="mb-0">Confusion Matrix</h6>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-center" style="height: 300px;">
+                    <img id="confusionImg" src="/results/confusion_matrix_XGBoost.png" class="img-fluid" alt="Confusion Matrix">
+                </div>
+            </div>
+        </div>
+
+        <!-- ROC Curve -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-header bg-success text-white text-center">
+                    <h6 class="mb-0">ROC Curve</h6>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-center" style="height: 300px;">
+                    <img id="rocImg" src="/results/roc_curve_xgboost.png" class="img-fluid" alt="ROC Curve">
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature Importance -->
+        <div class="col-md-4" id="importanceCard">
+            <div class="card h-100 shadow-sm">
+                <div class="card-header bg-warning text-dark text-center">
+                    <h6 class="mb-0">Feature Importance</h6>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-center" style="height: 300px;">
+                    <img id="importanceImg" src="/results/feature_importance_XGBoost.png" class="img-fluid" alt="Feature Importance">
+                </div>
+            </div>
+        </div>
+
+        <!-- Static Comparison Chart -->
+    <div class="card mb-5">
+        <div class="card-header bg-dark text-white text-center">
+            <h5 class="mb-0">Model Comparison: Accuracy vs F1 Score</h5>
+        </div>
+        <div class="card-body d-flex justify-content-center">
+            <div style="max-width: 600px; width: 100%;">
+                <img src="/results/model_comparison_plot.png" class="img-fluid rounded shadow-sm" alt="Comparison Chart">
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    const modelSelect = document.getElementById("modelSelect");
+    const confusionImg = document.getElementById("confusionImg");
+    const rocImg = document.getElementById("rocImg");
+    const importanceImg = document.getElementById("importanceImg");
+    const importanceCard = document.getElementById("importanceCard");
+
+    const capitalized = model => model.charAt(0).toUpperCase() + model.slice(1);
+
+    modelSelect.addEventListener("change", function () {
+        const model = this.value;
+
+        confusionImg.src = `/results/confusion_matrix_${capitalized(model)}.png`;
+        rocImg.src = `/results/roc_curve_${model}.png`;
+
+        if (model === "xgboost") {
+            importanceImg.src = `/results/feature_importance_XGBoost.png`;
+            importanceCard.style.display = "block";
+        } else {
+            importanceCard.style.display = "none";
+        }
+    });
+</script>
+{% endblock %}
