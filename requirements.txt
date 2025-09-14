@@ -17,7 +17,7 @@ seaborn
 # Web framework
 Flask
 Flask-Cors
-gunicorn   # <--- Add this
+gunicorn   
 
 # API documentation
 flasgger
